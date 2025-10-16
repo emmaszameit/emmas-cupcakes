@@ -1,0 +1,18 @@
+[
+  {
+    "id": "vanille",
+    "title": "Vanille-Cupcakes",
+    "image": "",
+    "servings": 12,
+    "time": "30–35 min",
+    "ingredients": [
+      {"qty":200,"unit":"g","item":"Mehl"},
+      {"qty":120,"unit":"g","item":"Zucker"},
+      {"qty":2,"unit":"Stk","item":"Eier"},
+      {"qty":120,"unit":"g","item":"Butter"},
+      {"qty":1.5,"unit":"TL","item":"Backpulver"},
+      {"qty":120,"unit":"ml","item":"Milch"}
+    ],
+    "steps": ["Ofen 180°C vorheizen","Teig rühren","20–22 Min. backen"]
+  }
+]
