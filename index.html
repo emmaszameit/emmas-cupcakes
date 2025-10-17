@@ -1,16 +1,70 @@
 <!doctype html>
 <html lang="de">
 <head>
-  <meta charset="utf-8">
-  <title>Emma’s Cupcakes</title>
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <link rel="stylesheet" href="styles.css">
+  <meta charset="utf-8" />
+  <title>Emma’s Cupcakes – Rezepte</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Süße, einfache Cupcake-Rezepte mit Mengenrechner." />
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="stylesheet" href="styles.css" />
+  <meta name="theme-color" content="#a40040">
 </head>
-<body>
-  <header><h1>🧁 Emma’s Cupcakes</h1><nav><a href="index.html">Start</a> · <a href="recipe.html?id=vanille">Rezept</a></nav></header>
-  <main><div id="grid" class="grid"></div></main>
-  <footer>© 2025 Emma</footer>
+<body class="layout">
+
+  <!-- Sidebar (links) -->
+  <aside class="sidebar" id="sidebar" aria-label="Hauptmenü">
+      <div class="sidebrand" aria-hidden="true">
+        <img src="images/cupcake.svg" alt="" />
+      </div>
+    <nav class="sidenav">
+      <a class="active" href="index.html">Rezepte</a>
+      <a href="about.html">Über mich</a>
+      <a href="kontakt.html">Kontakt</a>
+      <a href="kontakt.html#impressum">Impressum</a>
+    </nav>
+  </aside>
+
+  <!-- Topbar, mobile Geräte (Hamburger & mittiges Icon) -->
+  <header class="topbar">
+    <button class="hamburger" aria-controls="sidebar" aria-expanded="false" aria-label="Menü öffnen">☰</button>
+    <img class="topbar-icon" src="images/cupcake.svg" alt="Emma’s Cupcakes" />
+    <span class="topbar-spacer" aria-hidden="true"></span>
+  </header>
+
+  <!-- Inhalt (rechts) -->
+  <div class="content">
+    <div class="hero">
+      <img class="hero-logo" src="images/logo.svg" alt="Emma’s Cupcakes" />
+      <div class="hero-divider"></div>
+    </div>
+
+    <main class="wrap">
+      <section id="rezepte">
+        <h1>Alle Rezepte</h1>
+        <div id="grid" class="grid" aria-live="polite"></div>
+        <noscript><p>Bitte JavaScript aktivieren, um die Rezepte zu sehen.</p></noscript>
+      </section>
+    </main>
+
+    <footer class="wrap small">© 2025 Emma</footer>
+  </div>
+
   <script src="app.js"></script>
-  <script>renderIndex();</script>
+  <script>
+    // Karten rendern
+    if (typeof renderIndex === "function") renderIndex();
+
+    // Mobile Geräte: Sidebar ein- & ausblenden
+    const btn = document.querySelector('.hamburger');
+    const bar = document.getElementById('sidebar');
+    if (btn && bar) {
+      btn.addEventListener('click', () => {
+        const open = bar.classList.toggle('open');
+        btn.setAttribute('aria-expanded', open);
+      });
+    }
+  </script>
 </body>
 </html>

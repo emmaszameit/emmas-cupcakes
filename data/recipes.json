@@ -2,17 +2,83 @@
   {
     "id": "vanille",
     "title": "Vanille-Cupcakes",
-    "image": "",
+    "image": "images/vanille.png",
     "servings": 12,
     "time": "30–35 min",
+    "difficulty": "leicht",
     "ingredients": [
-      {"qty":200,"unit":"g","item":"Mehl"},
-      {"qty":120,"unit":"g","item":"Zucker"},
-      {"qty":2,"unit":"Stk","item":"Eier"},
-      {"qty":120,"unit":"g","item":"Butter"},
-      {"qty":1.5,"unit":"TL","item":"Backpulver"},
-      {"qty":120,"unit":"ml","item":"Milch"}
+      "160 g Mehl (Type 405)",
+      "1 TL Backpulver",
+      "1 Prise Salz",
+      "120 g weiche Butter",
+      "120 g Zucker",
+      "2 Eier (Größe M, Zimmertemperatur)",
+      "1 TL Vanilleextrakt",
+      "120 ml Milch"
     ],
-    "steps": ["Ofen 180°C vorheizen","Teig rühren","20–22 Min. backen"]
+    "steps": [
+      "Backofen auf 175 °C Ober-/Unterhitze vorheizen. Muffinblech mit 12 Förmchen auslegen.",
+      "Mehl, Backpulver und Salz in einer Schüssel mischen.",
+      "In einer zweiten Schüssel Butter und Zucker 2–3 Minuten cremig aufschlagen. Eier nacheinander unterrühren, dann Vanilleextrakt einrühren.",
+      "Abwechselnd Mehlmischung und Milch in 2–3 Portionen kurz, aber gründlich unterrühren – nur bis gerade ein glatter Teig entsteht.",
+      "Teig auf die Förmchen verteilen (je ~2/3 voll) und 18–20 Minuten backen. Stäbchenprobe machen.",
+      "Komplett auskühlen lassen (mind. 30 Min.), bevor du sie toppst. Für ein schnelles Vanille-Frosting 200 g Frischkäse, 60 g weiche Butter, 250–300 g Puderzucker und 1 TL Vanille glatt rühren."
+    ]
+  },
+  {
+    "id": "schoko",
+    "title": "Schoko-Cupcakes",
+    "image": "images/schoko.png",
+    "servings": 12,
+    "time": "35–40 min",
+    "difficulty": "mittel",
+    "ingredients": [
+      "140 g Mehl",
+      "40 g Kakaopulver (stark entölt)",
+      "1 TL Backpulver",
+      "1/2 TL Natron",
+      "1 Prise Salz",
+      "120 g Zucker",
+      "2 Eier (Größe M)",
+      "120 ml Buttermilch (alternativ Milch + 1 TL Zitronensaft)",
+      "80 ml neutrales Öl",
+      "80 ml heißer Kaffee oder heißes Wasser",
+      "1 TL Vanilleextrakt"
+    ],
+    "steps": [
+      "Backofen auf 175 °C vorheizen, 12er-Blech mit Förmchen auslegen.",
+      "Trockene Zutaten (Mehl, Kakao, Backpulver, Natron, Salz, Zucker) in einer Schüssel gründlich vermischen.",
+      "Nasse Zutaten (Eier, Buttermilch, Öl, Vanille) in einer zweiten Schüssel verquirlen, dann zu den trockenen Zutaten geben und kurz verrühren.",
+      "Heißer Kaffee/Wasser zum Schluss einrühren – der Teig wird relativ flüssig, das ist korrekt.",
+      "Teig auf die Förmchen verteilen und 18–20 Minuten backen. Vollständig auskühlen lassen.",
+      "Tipp: Schoko-Ganache-Frosting (200 g Zartbitter + 200 g Sahne) kochen, abkühlen lassen und aufschlagen."
+    ]
+  },
+  {
+    "id": "himbeere",
+    "title": "Himbeer-Cupcakes",
+    "image": "images/himbeere.png",
+    "servings": 12,
+    "time": "35–40 min",
+    "difficulty": "mittel",
+    "ingredients": [
+      "160 g Mehl",
+      "1 TL Backpulver",
+      "1 Prise Salz",
+      "120 g weiche Butter",
+      "120 g Zucker",
+      "2 Eier (Größe M)",
+      "120 ml Milch",
+      "100 g Himbeeren (frisch oder TK, TK nicht auftauen)",
+      "Abrieb von 1/2 Bio-Zitrone"
+    ],
+    "steps": [
+      "Backofen auf 175 °C vorheizen, Muffinform mit Förmchen auslegen.",
+      "Mehl, Backpulver und Salz mischen. Butter und Zucker 2–3 Minuten cremig schlagen.",
+      "Eier nacheinander unterrühren, Zitronenabrieb zugeben.",
+      "Abwechselnd Mehlmischung und Milch unterrühren. Zum Schluss Himbeeren vorsichtig unterheben.",
+      "Teig auf die Förmchen verteilen und 18–20 Minuten backen. Komplett auskühlen lassen.",
+      "Tipp: Himbeer-Frosting aus 200 g Frischkäse, 60 g Butter, 250–300 g Puderzucker und 2–3 EL Himbeerpüree."
+    ]
   }
 ]

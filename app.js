@@ -1,18 +1,37 @@
 async function loadRecipes(){ const r = await fetch('data/recipes.json'); return r.json(); }
-function byId(id){ return document.getElementById(id); }
+
+function cardHTML(r){
+  const img  = r.image?.trim() ? r.image : 'images/platzhalter.jpg';
+  const alt  = r.title || 'Cupcakes';
+  const href = `recipe.html?id=${encodeURIComponent(r.id)}`;
+
+  // Zeile 1: Stück & Zeit
+  const topLine = [
+    r.servings ? `${r.servings} Stück` : null,
+    r.time || null
+  ].filter(Boolean).join(" • ");
+
+  // Zeile 2: Schwierigkeit 
+  const diffLine = `<p class="meta meta-diff">Schwierigkeit: ${r.difficulty}</p>`;
+
+  return `
+    <a class="card" href="${href}">
+      <img src="${img}" alt="${alt}">
+      <div class="card-body">
+        <h3 class="card-title">${r.title}</h3>
+        <p class="meta">${topLine}</p>
+        ${diffLine}
+      </div>
+    </a>
+  `;
+}
 
 async function renderIndex(){
-  const list = await loadRecipes();
-  const grid = byId('grid');
-  grid.classList.add('wrap');
-  grid.innerHTML = list.map(r => `
-    <article class="card">
-      <img src="${r.image||''}" alt="${r.title}">
-      <h3>${r.title}</h3>
-      <p>${r.servings} Stück • ${r.time||'~30 min'}</p>
-      <a class="btn" href="recipe.html?id=${encodeURIComponent(r.id)}">Öffnen</a>
-    </article>`).join('');
+  const res  = await fetch('data/recipes.json');
+  const list = await res.json();
+  document.getElementById('grid').innerHTML = list.map(cardHTML).join('');
 }
+
 
 function scale(ings, base, target){ const f = target/base; return ings.map(i=>({...i, qty:+(i.qty*f).toFixed(2)})); }
 

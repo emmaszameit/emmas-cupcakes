@@ -1,7 +1,213 @@
-:root{--gap:16px;--max:1000px}
-*{box-sizing:border-box} body{margin:0;font:16px system-ui;background:#fff7fb;color:#222}
-header,footer,.wrap{max-width:var(--max);margin:auto;padding:16px}
-.grid{display:grid;gap:var(--gap);grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
-.card{border:1px solid #f0e3ef;border-radius:14px;padding:12px;background:#fff}
-img{max-width:100%;display:block;border-radius:12px}
-button,.btn{padding:8px 12px;border:1px solid #ddd;border-radius:10px;background:#fff}
+/* Allgemein */
+:root{
+  --accent:#a40040;     /* Akzentfarbe */
+  --tint:#f8e3ea;       /* zartes Rosa */
+  --ink:#111;           /* Text */
+  --muted:#ece7ea;      /* feine Linien */
+  --radius:16px;
+  --gap:18px;
+  --max:1100px;
+  --sidebar:240px;      /* Sidebarbreite Desktop */
+}
+
+/* Basis */
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font:16px/1.55 system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+  color:var(--ink);
+  background:#fff;
+}
+img{max-width:100%; display:block}
+.wrap{max-width:var(--max); margin:auto; padding:16px}
+.small{font-size:14px; color:#555}
+h1,h2,h3{line-height:1.2; margin:0 0 8px}
+h1{font-size:clamp(22px,3.5vw,32px)}
+h2{font-size:clamp(18px,2.6vw,24px)}
+h3{font-size:18px}
+p{margin:0 0 12px}
+.meta{color:#555; font-size:14px}
+:focus-visible{outline:2px solid var(--accent); outline-offset:2px}
+
+/* Grid Layout */
+.layout{
+  display:grid;
+  grid-template-columns: var(--sidebar) 1fr;
+  min-height:100dvh;
+}
+
+/* Sidebar (links) */
+.sidebar{
+  position:sticky; top:0; height:100dvh;
+  background:var(--accent); color:#fff;
+  padding:22px 18px;
+  display:flex; flex-direction:column;
+}
+.sidenav{display:flex; flex-direction:column; gap:10px; margin-top:6px}
+.sidenav a{
+  color:#fff; text-decoration:none;
+  padding:10px 12px; border-radius:12px;
+}
+.sidenav a:hover, .sidenav a:focus-visible, .sidenav a.active{
+  background:rgba(255,255,255,.14);
+}
+
+/* Content (rechts) */
+.content{min-width:0;}
+
+/* Großer Logo-Bereich (Desktop) */
+.hero{padding:16px 16px 0 16px}
+.hero-logo{
+  height:200px;           
+  width:auto;
+  margin:8px auto 14px auto;
+}
+.hero-divider{
+  height:2px; background:var(--accent);
+  max-width:var(--max); margin:0 auto;
+}
+
+/* Mobile Topbar */
+.topbar{
+  display:none;                
+  position:sticky; top:0; z-index:20;
+  background:var(--accent); color:#fff;
+  height:80px;                  
+  padding:0 12px;
+  align-items:center; justify-content:space-between;
+}
+.hamburger{
+  background:transparent; border:0; color:#fff;
+  font-size:24px; line-height:1;
+  width:60px; height:60px;
+  display:flex; align-items:center; justify-content:flex-start;
+  padding:0;
+}
+.topbar-icon{ height:60px; width:auto; display:block; }
+.topbar-spacer{ width:60px; height:60px; }
+
+/* Grid */
+.grid{
+  display:grid;
+  gap:var(--gap);
+  grid-template-columns:repeat(auto-fit, minmax(380px, 1fr));
+  max-width:1200px;
+  margin-inline:auto;
+}
+
+/* Karte (als <a>) */
+.card{
+  background:#fff;
+  border:2px solid var(--accent);
+  border-radius:999px;
+  padding:12px 16px;
+  display:grid;
+  grid-template-columns:120px minmax(0,1fr);
+  gap:16px; align-items:center;
+  box-shadow:0 2px 10px rgba(0,0,0,.04);
+  overflow:hidden;
+
+  /* Link-Optik */
+  text-decoration:none;
+  color:inherit;
+  cursor:pointer;
+}
+.card img{
+  width:120px; height:120px; object-fit:cover;
+  border-radius:50%;
+  border:4px solid var(--tint);
+}
+.card-body{ 
+    display:flex; 
+    flex-direction:column; 
+    gap:8px 
+}
+.card-body .meta{
+  margin: 0 0 4px;  
+}
+.card-body .meta-diff{
+  margin: 0;         
+  line-height: 1.25; 
+}
+/* sanfter Übergang */
+.card{ transition: transform .15s ease, box-shadow .15s ease, border-color .15s ease; }
+
+/* Hover (und Tastaturfokus gleich behandeln) */
+.card:hover,
+.card:focus-visible{
+  transform: translateY(-3px);         
+  border-color: var(--accent);          
+  box-shadow: 0 12px 28px rgba(164,0,64,.24); 
+}
+
+/* Fokusrahmen */
+.card:focus-visible{
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.card:active{ transform:translateY(1px); }
+
+/* Buttons */
+.btn{
+  display:inline-flex; align-items:center;
+  padding:8px 12px;
+  border:1.5px solid var(--accent);
+  color:var(--accent); background:#fff;
+  border-radius:10px; text-decoration:none; width:auto;
+}
+.btn:hover,.btn:focus-visible{ background:var(--tint); outline:2px solid transparent }
+
+/* Responsive (Mobile) */
+@media (max-width: 900px){
+  :root { --topbarH: 80px; }            
+  .layout{ grid-template-columns: 1fr; }
+  .topbar{ display:flex; position:fixed; top:0; left:0; right:0; height:var(--topbarH); z-index:1000; }
+
+  /* Sidebar unter der Topbar, off-canvas */
+  .sidebar{
+    position:fixed; inset:var(--topbarH) auto 0 0;
+    width:min(84vw, 300px);
+    transform:translateX(-100%);
+    transition:transform .18s ease-out;
+    box-shadow:0 10px 30px rgba(0,0,0,.25);
+    padding:16px 14px;
+    overflow:auto;
+  }
+  .sidebar.open{ transform:none; }
+
+  /* Anordnung Inhalt */
+  .content{ padding-top:var(--topbarH); margin-top:0; }
+
+  /* Hero: mobile Darstellung */
+  .hero{ padding:8px 0 0 0; }
+  .hero-logo{
+    width:70%;
+    height:auto;
+    max-height:140px;
+    margin:0 auto 10px;
+    display:block;
+    object-fit:contain;
+  }
+  .hero-divider{ margin:0; }
+}
+
+/* Cupcake-Logo oben in Sidebar (nur Desktop) */
+.sidebrand{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:12px 0 10px;
+  margin-bottom:10px;
+}
+.sidebrand img{
+  height: 120px;          
+  width:auto;
+  opacity:.95;
+}
+
+/* Mobil Sidebar */
+@media (max-width: 900px){
+  .sidebrand{ display:none; }
+}
