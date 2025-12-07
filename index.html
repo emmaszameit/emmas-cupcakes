@@ -10,30 +10,38 @@
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="stylesheet" href="styles.css" />
   <meta name="theme-color" content="#a40040">
+  <script defer
+    src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/js/all.min.js"
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
 <body class="layout">
 
-  <!-- Sidebar (links) -->
+  <!-- Sidebar -->
   <aside class="sidebar" id="sidebar" aria-label="Hauptmenü">
       <div class="sidebrand" aria-hidden="true">
         <img src="images/cupcake.svg" alt="" />
       </div>
     <nav class="sidenav">
-      <a class="active" href="index.html">Rezepte</a>
-      <a href="about.html">Über mich</a>
-      <a href="kontakt.html">Kontakt</a>
-      <a href="kontakt.html#impressum">Impressum</a>
+        <a href="index.html"><i class="fa-solid fa-house" aria-hidden="true"></i> Start</a>
+        <a href="about.html"><i class="fa-solid fa-user" aria-hidden="true"></i> Über mich</a>
+        <a href="kontakt.html"><i class="fa-solid fa-envelope" aria-hidden="true"></i> Kontakt</a>
     </nav>
   </aside>
 
   <!-- Topbar, mobile Geräte (Hamburger & mittiges Icon) -->
-  <header class="topbar">
-    <button class="hamburger" aria-controls="sidebar" aria-expanded="false" aria-label="Menü öffnen">☰</button>
+  <header class="topbar" role="banner">
+    <button id="hamburger" class="hamburger"
+        type="button"
+        aria-label="Menü öffnen"
+        aria-controls="sidebar"
+        aria-expanded="false">  
+      <span aria-hidden="true">☰</span>    
+    </button>
     <img class="topbar-icon" src="images/cupcake.svg" alt="Emma’s Cupcakes" />
     <span class="topbar-spacer" aria-hidden="true"></span>
   </header>
 
-  <!-- Inhalt (rechts) -->
+  <!-- Inhalt -->
   <div class="content">
     <div class="hero">
       <img class="hero-logo" src="images/logo.svg" alt="Emma’s Cupcakes" />
@@ -44,27 +52,24 @@
       <section id="rezepte">
         <h1>Alle Rezepte</h1>
         <div id="grid" class="grid" aria-live="polite"></div>
-        <noscript><p>Bitte JavaScript aktivieren, um die Rezepte zu sehen.</p></noscript>
       </section>
     </main>
 
-    <footer class="wrap small">© 2025 Emma</footer>
+    <footer class="wrap small footer-meta">
+        © 2025 Emma <span aria-hidden="true">|</span>
+        <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+        <span aria-hidden="true">|</span>
+        <a href="impressum.html">Impressum</a>
+        <span aria-hidden="true">|</span>
+        <a href="datenschutz.html">Datenschutz</a>
+    </footer>
   </div>
 
   <script src="app.js"></script>
   <script>
     // Karten rendern
     if (typeof renderIndex === "function") renderIndex();
-
-    // Mobile Geräte: Sidebar ein- & ausblenden
-    const btn = document.querySelector('.hamburger');
-    const bar = document.getElementById('sidebar');
-    if (btn && bar) {
-      btn.addEventListener('click', () => {
-        const open = bar.classList.toggle('open');
-        btn.setAttribute('aria-expanded', open);
-      });
-    }
   </script>
 </body>
 </html>

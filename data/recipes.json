@@ -2,7 +2,7 @@
   {
     "id": "vanille",
     "title": "Vanille-Cupcakes",
-    "image": "images/vanille.png",
+    "imageBase": "images/vanille/vanille",
     "servings": 12,
     "time": "30–35 min",
     "difficulty": "leicht",
@@ -28,7 +28,7 @@
   {
     "id": "schoko",
     "title": "Schoko-Cupcakes",
-    "image": "images/schoko.png",
+    "imageBase": "images/schoko/schoko",
     "servings": 12,
     "time": "35–40 min",
     "difficulty": "mittel",
@@ -57,7 +57,7 @@
   {
     "id": "himbeere",
     "title": "Himbeer-Cupcakes",
-    "image": "images/himbeere.png",
+    "imageBase": "images/himbeere/himbeere",
     "servings": 12,
     "time": "35–40 min",
     "difficulty": "mittel",

@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <title>Emma’s Cupcakes – Kontakt</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Kontakt · Telefonnummer, Zeiten und Kontaktformular" />
+  <meta name="theme-color" content="#a40040" />
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="stylesheet" href="styles.css" />
+  <script defer
+    src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/js/all.min.js"
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+<body class="layout">
+
+  <!-- Sidebar -->
+  <aside class="sidebar" id="sidebar" aria-label="Hauptmenü">
+    <div class="sidebrand" aria-hidden="true">
+      <img src="images/cupcake.svg" alt="">
+    </div>
+    <nav class="sidenav">
+        <a href="index.html"><i class="fa-solid fa-house" aria-hidden="true"></i> Start</a>
+        <a href="about.html"><i class="fa-solid fa-user" aria-hidden="true"></i> Über mich</a>
+        <a href="kontakt.html"><i class="fa-solid fa-envelope" aria-hidden="true"></i> Kontakt</a>
+    </nav>
+  </aside>
+
+  <!-- Mobile Topbar -->
+  <header class="topbar" role="banner">
+    <button id="hamburger" class="hamburger"
+        type="button"
+        aria-label="Menü öffnen"
+        aria-controls="sidebar"
+        aria-expanded="false">  
+      <span aria-hidden="true">☰</span>    
+    </button>
+    <img class="topbar-icon" src="images/cupcake.svg" alt="Emma’s Cupcakes" />
+    <span class="topbar-spacer" aria-hidden="true"></span>
+  </header>
+
+  <!-- Inhalt -->
+  <div class="content">
+    <div class="hero">
+      <img class="hero-logo" src="images/logo.svg" alt="Emma’s Cupcakes" />
+      <div class="hero-divider" aria-hidden="true"></div>
+    </div>
+
+    <main class="wrap contact">
+      <h1>Kontakt</h1>
+
+      <!-- Kontaktboxen -->
+      <section class="contact-grid" aria-label="Direkte Kontaktmöglichkeiten">
+        <div class="contact-box">
+          <h2>Telefon</h2>
+          <p>+49 123 1234 123</p>
+          <p>
+            <span class="meta">Anrufzeiten: Mo–Fr&nbsp;10–16&nbsp;Uhr</span>
+          </p>
+        </div>
+
+        <div class="contact-box">
+          <h2>E-Mail</h2>
+          <p>emmas.cupcakes@gmx.de</p>
+          <p>
+            <span class="meta">Ich antworte in der Regel innerhalb von 24&nbsp;Stunden.</span>
+          </p>
+        </div>
+      </section>
+
+      <!-- Kontaktformular (Formspree) -->
+      <section class="contact-form" aria-labelledby="form-title">
+        <h2 id="form-title">Nachricht senden</h2>
+
+        <form id="contact-form"
+              action="https://formspree.io/f/xnngwbve"
+              method="POST"
+              novalidate>
+          <div class="field">
+            <label for="name">Name</label>
+            <input id="name" name="name" type="text" required autocomplete="name" />
+          </div>
+
+          <div class="field">
+            <label for="email">E-Mail</label>
+            <input id="email" name="_replyto" type="email" required autocomplete="email" />
+          </div>
+
+          <div class="field">
+            <label for="subject">Betreff</label>
+            <input id="subject" name="subject" type="text" placeholder="Kurzer Betreff" required />
+          </div>
+
+          <div class="field">
+            <label for="message">Nachricht</label>
+            <textarea id="message" name="message" rows="6" required></textarea>
+          </div>
+
+          <input type="text" name="website" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+          <!-- optionale Helfer-Felder -->
+
+          <button class="btn" type="submit" id="sendBtn" disabled aria-disabled="true">Senden</button>
+
+          <p id="form-status" class="small" role="status" aria-live="polite"></p>
+        </form>
+
+        <p class="small muted">
+          Hinweis: Dieses Formular nutzt Formspree. Deine Angaben werden nur zur Bearbeitung deiner Anfrage verwendet.
+        </p>
+      </section>
+    </main>
+
+    <footer class="wrap small footer-meta">
+      © 2025 Emma <span aria-hidden="true">|</span>
+      <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+      <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+      <span aria-hidden="true">|</span>
+      <a href="impressum.html">Impressum</a>
+      <span aria-hidden="true">|</span>
+      <a href="datenschutz.html">Datenschutz</a>
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

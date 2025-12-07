@@ -2,17 +2,16 @@
 <html lang="de">
 <head>
   <meta charset="utf-8" />
-  <title>Emma’s Cupcakes – Rezept</title>
+  <title>Emma’s Cupcakes – Impressum</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Rezept-Detail mit Mengenrechner." />
+  <meta name="description" content="Impressum" />
   <meta name="theme-color" content="#a40040" />
   <link rel="icon" href="favicon.ico" sizes="any">
-  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="stylesheet" href="styles.css" />
   <script defer
     src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/js/all.min.js"
-    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>  
 </head>
 <body class="layout">
 
@@ -48,63 +47,55 @@
       <div class="hero-divider" aria-hidden="true"></div>
     </div>
 
-    <main class="wrap">
-      <a href="index.html" class="btn" style="margin-bottom:12px">← Zurück</a>
+    <main class="wrap legal">
+      <h1>Impressum</h1>
 
-      <!-- Rezept-Container -->
-      <article id="recipe" class="recipe">
-        <header class="recipe-head">
-            <div class="avatar">
-              <div id="r-img-wrap"></div>
-            </div>
+      <section>
+        <h2>Angaben gemäß § 5 TMG</h2>
+        <p><strong>Emma Szameitpreiks</strong><br>
+        Stülpkelander Weg 1<br>
+        26759 Hinte</p>
 
-            <div class="head-info">
-              <h1 id="r-title"></h1>
-              <p class="meta" id="r-meta"></p>
-              <p class="meta" id="r-diff"></p>
-            </div>
-        </header>
+        <p>Emmas.cupcakes@gmx.de</p>
+      </section>
 
-        <section class="controls">
-          <label for="r-serv">Mengenrechner:</label>
-          <input id="r-serv" type="number" min="1" step="1" value="12">
-          <span id="r-base"></span>
-          <span id="r-current" class="meta"></span>
-        </section>
+      <section>
+        <h2>Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV</h2>
+        <p>Emma Szameitpreiks.</p>
+      </section>
 
-        <section>
-          <h2>Zutaten</h2>
-          <ul id="r-ingredients"></ul>
-        </section>
+      <section>
+        <h2>Haftungsausschluss</h2>
+        <p>Die Inhalte dieser Website wurden mit größter Sorgfalt erstellt. Für die Richtigkeit,
+        Vollständigkeit und Aktualität der Inhalte kann jedoch keine Gewähr übernommen werden.</p>
+      </section>
 
-        <section>
-          <h2>Anleitung</h2>
-          <ol id="r-steps"></ol>
-        </section>
-      </article>
+      <section>
+        <h2>Urheberrecht</h2>
+        <p>Die durch die Seitenbetreiberin erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht.
+        Beiträge Dritter sind als solche gekennzeichnet.</p>
+      </section>
 
-      <!-- Fallback falls ID nicht existiert -->
-      <div id="r-notfound" class="placeholder" hidden>
-        <h1>Rezept nicht gefunden</h1>
-        <p><a class="btn" href="index.html">Zurück zu allen Rezepten</a></p>
-      </div>
+      <section>
+        <h2>Bildnachweise</h2>
+        <p>Eigene Fotos/Assets, sofern nicht anders angegeben.</p>
+      </section>
+
     </main>
 
+    <!-- Footer -->
     <footer class="wrap small footer-meta">
         © 2025 Emma <span aria-hidden="true">|</span>
         <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
         <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
         <span aria-hidden="true">|</span>
-        <a href="impressum.html">Impressum</a>
+        <span>Impressum</span>
         <span aria-hidden="true">|</span>
         <a href="datenschutz.html">Datenschutz</a>
     </footer>
   </div>
 
   <script src="app.js"></script>
-  <script>
-    if (typeof initRecipe === 'function') initRecipe();
-  </script>
+
 </body>
 </html>
-

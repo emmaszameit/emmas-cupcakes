@@ -78,12 +78,22 @@ p{margin:0 0 12px}
   align-items:center; justify-content:space-between;
 }
 .hamburger{
-  background:transparent; border:0; color:#fff;
+  background:transparent; 
+  border:0; 
+  color:#fff;
   font-size:24px; line-height:1;
   width:60px; height:60px;
   display:flex; align-items:center; justify-content:flex-start;
   padding:0;
+  cursor: pointer;
 }
+
+.hamburger:focus-visible{
+  outline: 3px solid currentColor;
+  outline-offset: 3px;
+  border-radius: 8px;
+}
+
 .topbar-icon{ height:60px; width:auto; display:block; }
 .topbar-spacer{ width:60px; height:60px; }
 
@@ -174,11 +184,13 @@ p{margin:0 0 12px}
     box-shadow:0 10px 30px rgba(0,0,0,.25);
     padding:16px 14px;
     overflow:auto;
+    z-index: 1100; 
   }
+
   .sidebar.open{ transform:none; }
 
   /* Anordnung Inhalt */
-  .content{ padding-top:var(--topbarH); margin-top:0; }
+  .content{ padding-top:var(--topbarH); }
 
   /* Hero: mobile Darstellung */
   .hero{ padding:8px 0 0 0; }
@@ -193,7 +205,7 @@ p{margin:0 0 12px}
   .hero-divider{ margin:0; }
 }
 
-/* Cupcake-Logo oben in Sidebar (nur Desktop) */
+/* Cupcake-Logo in Sidebar (Desktop) */
 .sidebrand{
   display:flex;
   align-items:center;
@@ -211,3 +223,203 @@ p{margin:0 0 12px}
 @media (max-width: 900px){
   .sidebrand{ display:none; }
 }
+
+/* Rezept-Header */
+
+/* mobiles Layout: Bild oben, alles zentriert */
+.recipe-head{
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: center;
+  align-items: start;
+  gap: 14px;
+  margin: 10px 0 18px;
+  text-align: center;
+}
+
+/* runder Avatar */
+.avatar{
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  padding: 6px;                      
+  background: var(--tint);           
+  box-shadow: 0 6px 18px rgba(0,0,0,.06);
+}
+.avatar img{
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Titel + Metas */
+.head-info h1{
+  margin: 4px 0 4px;
+}
+.head-info .meta{
+  margin: 2px 0;
+}
+
+/* Bild links, Text rechts */
+@media (min-width: 768px){
+  .recipe-head{
+    grid-template-columns: 280px 1fr; 
+    justify-items: start;
+    align-items: center;
+    text-align: left;
+    column-gap: 18px;
+  }
+}
+
+/* Mengenrechner-Block unmittelbar unter dem Kopf */
+.controls{
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px 14px;
+  margin: 10px 0 16px;
+}
+.controls input{
+  width: 120px;
+  padding: 6px 8px;
+  border: 2px solid var(--accent);
+  border-radius: 10px;
+}
+
+.footer-meta{
+  display:flex; gap:8px; align-items:center; flex-wrap:wrap;
+}
+.footer-meta a{
+  color: var(--accent);
+  text-decoration: none;
+}
+.footer-meta a:hover,
+.footer-meta a:focus-visible{
+  text-decoration: underline;
+}
+.footer-meta span{ opacity:.6; }
+
+.legal h1{ margin: 6px 0 10px; }
+.legal h2{ margin: 20px 0 8px; font-size: 1.1rem; }
+.legal p, .legal li{ line-height: 1.6; }
+.legal section{ margin-bottom: 14px; }
+
+/* Über-mich Layout */
+.about-intro{
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px;
+  align-items: center;
+  margin: 6px 0 18px;
+}
+.about-text p{ margin: 8px 0; }
+
+.about-avatar{
+  display:flex;
+  justify-content:center;
+}
+.avatar-lg{
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  padding: 8px;
+  background: var(--tint);        
+  box-shadow: 0 6px 18px rgba(0,0,0,.06);
+}
+.avatar-lg img{
+  width: 100%; height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  display:block;
+}
+
+@media (min-width: 900px){
+  .about-intro{
+    grid-template-columns: 1.3fr 0.9fr;  
+    column-gap: 24px;
+  }
+}
+
+.about-story{ margin: 10px 0 20px; }
+.about-story h2{ margin: 8px 0 8px; }
+.about-story p{ line-height: 1.6; }
+
+/* Kontakt: Boxen + Formular */
+.contact-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));
+  gap:16px;
+  margin:8px 0 16px;
+}
+.contact-box{
+  border:2px solid var(--accent);
+  border-radius:14px;
+  padding:12px 14px;
+  background:#fff;
+  box-shadow:0 2px 10px rgba(0,0,0,.04);
+}
+.contact-box h2{margin-bottom:6px}
+.contact-box a{color:var(--accent);text-decoration:none}
+.contact-box a:hover,.contact-box a:focus-visible{text-decoration:underline}
+
+.contact-form{margin:10px 0 22px}
+.contact-form .field{display:flex;flex-direction:column;gap:6px;margin:10px 0}
+.contact-form label{font-weight:600}
+.contact-form input,
+.contact-form textarea{
+  border:2px solid var(--accent);
+  border-radius:10px;
+  padding:10px 12px;
+  font:inherit;
+}
+.contact-form textarea{resize:vertical}
+.contact-form .btn{margin-top:4px}
+.contact-form .form-alt{margin:6px 0 0}
+.contact-form .muted{color:#666}
+
+/* Honeypot verstecken */
+.hp{
+  position:absolute !important;
+  left:-10000px !important;
+  width:1px;height:1px;
+  opacity:0;pointer-events:none;
+}
+
+/* Button deaktiviert */
+.btn[disabled],
+.btn[aria-disabled="true"]{
+  opacity:.55;
+  cursor:not-allowed;
+  filter: grayscale(.2);
+}
+
+/* einfache Fehlermarkierung der Felder */
+.field input.invalid,
+.field textarea.invalid{
+  border-color: #f8e3ea;
+}
+
+.sidenav a i { margin-right: .5rem; width: 1.2em; text-align: center; }
+footer a i { font-size: 1.25rem; }
+
+/* Mobile zuerst – kleine Quelle */
+.heroimg-about{
+  height: 35vh;
+  min-height: 180px;
+  background: center/cover no-repeat url("images/hero-small.jpg");
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.12);
+  margin: 2rem 0 0;  
+}
+
+/* Responsive Image via MediaQuery */
+@media (min-width: 768px){
+  .heroimg-about{ background-image: url("images/hero-large.jpg"); }
+}
+
+@media (min-width: 768px) and (prefers-reduced-data: reduce){
+  .heroimg-about{ background-image: url("images/hero-small.jpg"); }
+}
+
